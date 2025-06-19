@@ -1,0 +1,91 @@
+body {
+    width: 380px;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: white;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .profile-info {
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid whitesmoke;
+  }
+  
+  .stats {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+  }
+  
+  .stats div {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .buttons {
+    margin: 15px 0;
+  }
+  
+  button {
+    background-color: greenyellow;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 3px;
+    font-size: 12px;
+  }
+  
+  button:hover {
+    background-color: greenyellow;
+  }
+  
+  #historyContainer {
+    margin-top: 15px;
+    text-align: left;
+  }
+  
+  .history-items {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .history-item {
+    border-bottom: 1px solid whitesmoke;
+    padding: 8px 0;
+  }
+  
+  .history-item:last-child {
+    border-bottom: none;
+  }
+  
+  .title a {
+    color: blue;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  .title a:hover {
+    text-decoration: underline;
+  }
+  
+  .domain {
+    color: green;
+    font-size: 11px;
+    margin: 2px 0;
+  }
+  
+  .time {
+    color: grey;
+    font-size: 11px;
+  }
+  
