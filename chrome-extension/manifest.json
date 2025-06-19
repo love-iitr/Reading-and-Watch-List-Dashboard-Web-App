@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "Reading Tracker",
+    "version": "1.0",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1NsejTuDE/VCt6LkDULlQAN7Cqt/0A18KqXrMR34qThnIJGmd+EhrJj0EruYaeCinfYK4DgA9/1k+QtjP5UNE+gudyGclgjxjsyQS8fzqd9iECKJb2lt26rRVQNUTydnO85gBAhS3J1xveEtKKsTtbr/OSuNIo5G2dy8c3JbwV9v4LwV091TQCEhEnN0RoZJGbt/3ZgRzY3tE42sburcCmnNBS+AcnuQ80zmSGYXRahG19NUYBfAA3iaIzY6t2nElLh+x5FHVKYvJRIAxw1D/NIeOrzhBOjQCe0j3oo1XM8ZzXFyAVv80uK1r4Txl9bTHVpi7X/aVIrYIrblWnmd5QIDAQAB",
+    "description": "Track your reading and watching history",
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "storage",
+      "scripting",
+      "identity"
+    ],
+    "host_permissions": [
+    "http://localhost:5001/*"
+    ],
+    "oauth2": {
+      "client_id": "37961407522-qagi109dar104fb8l61m4elopke94otl.apps.googleusercontent.com",
+      "scopes": [
+        "https://www.googleapis.com/auth/userinfo.email",
+        "https://www.googleapis.com/auth/userinfo.profile"
+      ]
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }],
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Reading Tracker"
+    }
+  }
+  
+  
