@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Readings Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="profile-info">
+      <h2 style="margin-bottom:8px;">Profile</h2>
+      <img id="profilePicture" style="width:60px;height:60px;border-radius:50%;margin-bottom:10px;">
+      <strong id="profileName"></strong><br>
+      <span id="profileEmail"></span>
+    </div>
+    <div class="stats">
+      <div id="todayCount">Today: 0 visits</div>
+      <div id="totalCount">Total: 0 visits</div>
+    </div>
+    <div class="buttons">
+      <button id="viewHistory">View History</button>
+      <button id="exportData">Export Data</button>
+      <button id="clearHistory">Clear History</button>
+    </div>
+    <div id="historyContainer" style="display:none;">
+      <h3>Recent Visits</h3>
+      <div id="historyList"></div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
