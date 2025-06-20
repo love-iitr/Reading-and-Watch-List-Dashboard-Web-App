@@ -12,7 +12,7 @@
       "identity"
     ],
     "host_permissions": [
-    "http://localhost:5001/*"
+    "http://localhost:3000/*"
     ],
     "oauth2": {
       "client_id": "37961407522-qagi109dar104fb8l61m4elopke94otl.apps.googleusercontent.com",
