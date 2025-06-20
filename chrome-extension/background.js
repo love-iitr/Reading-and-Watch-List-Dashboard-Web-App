@@ -56,7 +56,7 @@ setInterval(() => {
         profile: userProfile,
         history: newEntries
       };
-      fetch('http://localhost:5001/api/save', {
+      fetch('http://localhost:3000/api/save', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
