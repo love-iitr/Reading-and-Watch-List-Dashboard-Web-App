@@ -1,21 +1,24 @@
 const { writeData } = require('./fileHandler');
 
 const saveContent = (req, res) => {
-  const { type, url, content } = req.body;
+  const { profile, history } = req.body;
 
-  if (!url || !content) {
-    return res.status(400).json({ message: "Missing URL or content" });
+  if (!profile || !history || !Array.isArray(history)) {
+    return res.status(400).json({ message: "Missing profile or history array" });
   }
 
-  const newEntry = {
-    timestamp: new Date().toISOString(),
-    type,
-    url,
-    content
-  };
+  history.forEach(entry => {
+    const newEntry = {
+      timestamp: new Date().toISOString(),
+      type: entry.type || 'visit',
+      url: entry.url,
+      content: entry.title,
+      profile
+    };
+    writeData(newEntry);
+  });
 
-  writeData(newEntry); // Save to data.json
-  res.status(200).json({ message: "✅ Content received and saved." });
+  res.status(200).json({ message: "✅ History received and saved." });
 };
 
 module.exports = { saveContent };
