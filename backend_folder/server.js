@@ -14,8 +14,6 @@ app.use(cors({
 app.use(express.json());
 
 // === HELPERS ===
-
-// Paths
 const userFile = path.join(__dirname, 'data', 'users.json');
 const historyFile = path.join(__dirname, 'data', 'history.json');
 
@@ -37,43 +35,62 @@ const getHistory = () => {
   }
 };
 
-// Group history by user
-const groupByUser = () => {
-  const users = getUsers();
-  const history = getHistory();
-  return users.map(user => ({
-    ...user,
-    history: history.filter(h => h.email === user.email)
-  }));
-};
+// Normalize utility
+const normalize = (str) =>
+  typeof str === 'string'
+    ? str.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/\/+$/, '')
+    : '';
 
 // === POST /api/save ===
 app.post('/api/save', (req, res) => {
   const { profile, history } = req.body;
+
   if (!profile || !history || !Array.isArray(history)) {
     return res.status(400).json({ message: 'Invalid payload' });
   }
 
-  // Save profile to users.json
+  // --- Save profile to users.json ---
   const users = getUsers();
-  const existingIndex = users.findIndex(u => u.email === profile.email);
-  if (existingIndex !== -1) {
-    users[existingIndex] = profile;
+  const existingUserIndex = users.findIndex(u => u.email === profile.email);
+  if (existingUserIndex !== -1) {
+    users[existingUserIndex] = profile;
   } else {
     users.push(profile);
   }
   fs.writeFileSync(userFile, JSON.stringify(users, null, 2));
 
-  // Save history to history.json (attach user email)
+  // --- Save history to history.json with deduplication ---
   const allHistory = getHistory();
-  const newEntries = history.map(entry => ({
-    ...entry,
-    email: profile.email
-  }));
-  allHistory.push(...newEntries);
-  fs.writeFileSync(historyFile, JSON.stringify(allHistory, null, 2));
+  const updatedHistory = [...allHistory];
 
+  history.forEach(entry => {
+    const normalizedEmail = normalize(profile.email);
+    const normalizedURL = normalize(entry.url);
+
+    const existingIndex = updatedHistory.findIndex(
+      h => normalize(h.email) === normalizedEmail && normalize(h.url) === normalizedURL
+    );
+
+    const newEntry = {
+      ...entry,
+      email: profile.email,
+      timestamp: new Date().toISOString()
+    };
+
+    if (existingIndex !== -1) {
+      // Update existing entry
+      updatedHistory[existingIndex] = { ...updatedHistory[existingIndex], ...newEntry };
+      console.log(`🔁 Updated: ${entry.url}`);
+    } else {
+      // Add new entry
+      updatedHistory.push(newEntry);
+      console.log(`🆕 Added: ${entry.url}`);
+    }
+  });
+
+  fs.writeFileSync(historyFile, JSON.stringify(updatedHistory, null, 2));
   console.log("✅ Data saved to users.json and history.json");
+
   res.status(200).json({ message: "Data saved successfully" });
 });
 
