@@ -1,5 +1,5 @@
 # 📚 Reading Tracker – Chrome Extension with Backend & Frontend
-A full-stack application that helps users track their web browsing activity. It includes a Chrome Extension that captures browsing data, a Backend API to process and store the data, and a React Frontend to display user-specific summaries.
+A full-stack application that helps users track their web reading activity and sharing it without any manual effort. It includes a Chrome Extension that captures browsing data, a Backend API to process and store the data, and a React Frontend to display user-specific summaries.
 
 reading-tracker/
 ├── chrome-extension/   # Chrome extension source code
