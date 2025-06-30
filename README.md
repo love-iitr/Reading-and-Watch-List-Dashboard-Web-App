@@ -28,7 +28,7 @@ reading-tracker/
    
 4. Frontend Setup
    cd frontend
-   npm install
+   npm install @mlc-ai/web-llm
    npm start
 
 🙌 Credits
