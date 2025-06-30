@@ -14,9 +14,9 @@ reading-tracker/
 2. Chrome Extension Setup
   Navigate to chrome-extension/
   Load the extension into Chrome:
-  Go to chrome://extensions/
-  Enable "Developer Mode"
-  Click "Load unpacked"
+  Go to chrome://extensions/;
+  Enable "Developer Mode";
+  Click "Load unpacked";
   Select the chrome-extension folder
 
 3. Backend Setup
@@ -33,7 +33,7 @@ reading-tracker/
 
 🙌 Credits
 Built by {
-  Love kumar 
-  Geeta Yadav
+  Love kumar,
+  Geeta Yadav,
   Dhananjay Yadav
   }
