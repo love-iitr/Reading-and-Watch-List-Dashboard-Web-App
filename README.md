@@ -29,6 +29,7 @@ reading-tracker/
 4. Frontend Setup
    cd frontend
    npm install @mlc-ai/web-llm
+   npm install react-router-dom
    npm start
 
 🙌 Credits
