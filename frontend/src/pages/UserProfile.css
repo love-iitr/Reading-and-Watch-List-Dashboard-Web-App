@@ -1,0 +1,181 @@
+.userprofile-container {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+  }
+  
+  .userprofile-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .userprofile-backlink {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: #4e54c8;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .userprofile-profileheader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .userprofile-profileimage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.5rem;
+    border: 3px solid #8f94fb;
+    box-shadow: 0 4px 12px rgba(143, 148, 251, 0.3);
+  }
+  
+  .userprofile-profilename {
+    margin: 0;
+    color: #333;
+    font-size: 1.8rem;
+  }
+  
+  .userprofile-profileemail {
+    margin: 0.3rem 0 0;
+    color: #666;
+    font-size: 1rem;
+  }
+  
+  .userprofile-section {
+    margin-bottom: 2rem;
+  }
+  
+  .userprofile-sectiontitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #4e54c8;
+  }
+  
+  .userprofile-sectionsubtitle {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  .userprofile-historycontainer {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+  
+  .userprofile-historyitem {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid #eee;
+    background-color: #fafafa;
+  }
+  
+  .userprofile-historyitem.selected {
+    border-color: #4e54c8;
+    background-color: #f0f2ff;
+  }
+  
+  .userprofile-radio {
+    margin-top: 4px;
+    margin-right: 1rem;
+    accent-color: #4e54c8;
+    cursor: pointer;
+  }
+  
+  .userprofile-historycontent {
+    flex: 1;
+  }
+  
+  .userprofile-historylink {
+    display: block;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 0.3rem;
+  }
+  
+  .userprofile-historytimestamp {
+    margin: 0;
+    color: #888;
+    font-size: 0.85rem;
+  }
+  
+  .userprofile-summarizebutton {
+    margin-top: 1.5rem;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #4e54c8, #8f94fb);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(78, 84, 200, 0.25);
+  }
+  
+  .userprofile-summarysection {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+  }
+  
+  .userprofile-summarytitle {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #4e54c8;
+  }
+  
+  .userprofile-summarybox {
+    background-color: #f8f9ff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #e0e4ff;
+  }
+  
+  .userprofile-summarytext {
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+  }
+  
+  .userprofile-loadingcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+  
+  .userprofile-spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #4e54c8;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: userprofile-spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes userprofile-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
